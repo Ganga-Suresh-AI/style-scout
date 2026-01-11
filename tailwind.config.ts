@@ -13,6 +13,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        heading: ['Cormorant Garamond', 'serif'],
+        body: ['Inter', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -57,6 +61,21 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        rose: {
+          light: "hsl(350, 30%, 95%)",
+          DEFAULT: "hsl(350, 35%, 60%)",
+          dark: "hsl(350, 40%, 45%)",
+        },
+        sage: {
+          light: "hsl(150, 25%, 92%)",
+          DEFAULT: "hsl(150, 20%, 75%)",
+          dark: "hsl(150, 25%, 35%)",
+        },
+        cream: {
+          light: "hsl(40, 35%, 98%)",
+          DEFAULT: "hsl(40, 30%, 95%)",
+          dark: "hsl(40, 25%, 88%)",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -65,25 +84,32 @@ export default {
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+        "pulse-soft": {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0.7" },
+        },
+        shimmer: {
+          "0%": { backgroundPosition: "-200% 0" },
+          "100%": { backgroundPosition: "200% 0" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "pulse-soft": "pulse-soft 2s ease-in-out infinite",
+        shimmer: "shimmer 2s linear infinite",
+      },
+      boxShadow: {
+        soft: "0 4px 20px -4px hsl(220 15% 15% / 0.08)",
+        elevated: "0 12px 40px -8px hsl(220 15% 15% / 0.12)",
+        glow: "0 0 30px -5px hsl(350 35% 60% / 0.25)",
       },
     },
   },
